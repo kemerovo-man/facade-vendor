@@ -6,7 +6,7 @@
 
 1. выполнить
 ```
-require kemerovo-man/facade-vendor
+composer require kemerovo-man/facade-vendor
 ```
 для Laravel 5.7
 ```
