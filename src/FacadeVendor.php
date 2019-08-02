@@ -65,13 +65,17 @@ class FacadeVendor extends Facade
             app()->instance(static::getMockableClass(), $mock);
             static::$resolvedInstance[$name] = $mock;
         }
-        if ($shouldReceiveSignature
-            && is_array($shouldReceiveSignature)
+
+        if (is_array($shouldReceiveSignature)
             && $method
         ) {
             static::checkSignature($name, $method, $shouldReceiveSignature);
             $res = $mock->shouldReceive($method);
-            call_user_func_array([$res, 'with'], array_values($shouldReceiveSignature));
+            if (count($shouldReceiveSignature) == 0) {
+                call_user_func_array([$res, 'withNoArgs'], []);
+            } else {
+                call_user_func_array([$res, 'with'], array_values($shouldReceiveSignature));
+            }
             return $res;
         }
         return $mock->shouldReceive(...func_get_args());
