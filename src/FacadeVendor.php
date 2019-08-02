@@ -9,13 +9,6 @@ use ReflectionMethod;
 
 class FacadeVendor extends Facade
 {
-    // Расширение фасада для возможности контролировать сигнатуру методов через рефлекшн
-    // пример вызова:
-    // SomeService::shouldReceive('someMethod', [
-    //            'parameter1' => 'testValue1',
-    //            'parameter2' => 'testValue2',
-    //        ])->once();
-
     protected static $storedInstance = [];
 
     public static function checkSignature($name, $method, $shouldReceiveSignature)
