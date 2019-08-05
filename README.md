@@ -1,4 +1,4 @@
-# Фасад вендор для Laravel 5.7
+# Фасад вендор для Laravel 5.7, 5.8
 
  Расширение фасада для возможности контролировать сигнатуру методов в юнит тестах через рефлекшн.
  
@@ -12,6 +12,13 @@ composer require kemerovo-man/facade-vendor
 ```
     "require": {
         "kemerovo-man/facade-vendor": "5.7.*"
+    }
+```
+
+для Laravel 5.8
+```
+    "require": {
+        "kemerovo-man/facade-vendor": "5.8.*"
     }
 ```
 Пример фасада для сервиса:
